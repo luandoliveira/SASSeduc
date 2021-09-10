@@ -12,7 +12,7 @@
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center ">
         <div id="ajuste1" class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
+          <img src="img/logo.png" class="img-fluid"
            >
         </div>
         <div  id="ajuste2" class="col-md-10 col-lg-6 col-xl-4 offset-xl-1">

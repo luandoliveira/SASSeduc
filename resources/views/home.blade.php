@@ -1,41 +1,38 @@
 @extends('templates.navtemplate')
 
 @section('content')
+
+<div id= cabecalho><h4>Administrativo</h4></div>
 <div class="row">
-    <div class="card green">
+    <div class="card oneCard">
         <h2 class="text-center">1.550.200</h2>
         <p class="text-center">Total de Produtos</p>
     </div>
 
-    <div class="card green">
+    <div class="card twoCard">
         <h2 class="text-center">5.3 millhões</h2>
         <p class="text-center">Número de Registros</p>
     </div>
 
-    <div class="card green">
+    <div class="card threeCard">
         <h2 class="text-center">31/08/2021</h2>
         <p class="text-center">Última Atualização</p>
     </div>
 </div>
 
-<!-- <div class=" col-md-6">
-    <canvas id="myChart1"></canvas>
-</div>
-<br>
-<div class=" col-md-6">
-    <canvas id="myChart3"></canvas>
-</div>
-<br>
-<div class=" col-md-6">
+
+
+<div style="display:inline-block;" class=" col-md-6">
     <canvas id="myChart2"></canvas>
 </div>
-<br>
-<div class=" col-md-3">
-    <canvas id="myChart4"></canvas>
-</div>
-<div class=" col-md-3">
+
+<div class="form-group;">
+<div id="graf1" class=" col-md-3">
     <canvas id="myChart5"></canvas>
-</div> -->
+</div>
+</div>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -179,7 +176,7 @@ var myChart = new Chart(ctx, {
 
 <style>
 body {
-    font-family: "Poppins", sans-serif;
+    /* font-family: "Poppins", sans-serif; */
     background-color: #fafafa;
 }
 
@@ -187,6 +184,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 .card {
@@ -214,11 +213,56 @@ body {
     max-height: 64px;
 }
 
-.green {
-    border-left: 3px solid #002e5e;
+.oneCard {
+    border-left: 120px solid #00c0ef;
+}
+.twoCard {
+    border-left: 120px solid #f39c12;
+}
+
+.threeCard {
+    border-left: 120px solid #00a65a;
+}
+#cabecalho{
+ padding-top:15px;
+ padding-bottom:15px;
+ background-color:#00b050;
+ color:#fff;
+ padding-left:45%;
+ padding-right:50%;
+
+}
+
+div.myChart5{
+    
+
+        display: inline-block;
+
+  
+
+}
+div.myChart2{
+
+        display: inline-block;
+      
 }
 
 
+@media (max-width: 767px) {
+
+    #cabecalho{
+ padding-top:15px;
+ padding-bottom:15px;
+ background-color:#00b050;
+ color:#fff;
+ padding-left:30%;
+
+
+}
+
+
+
+}
 </style>
 
 @endsection

@@ -11,8 +11,8 @@
 <section class="vh-100">
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center ">
-        <div id="ajuste1" class="col-md-9 col-lg-6 col-xl-5">
-          <img src="img/logo.png" class="img-fluid"
+        <div id="ajuste1"> <!-- class="col-md-9 col-lg-6 col-xl-5" -->
+          <img  id="ajuste3" src="img/logo.png" class="img-fluid"
            >
         </div>
         <div  id="ajuste2" class="col-md-10 col-lg-6 col-xl-4 offset-xl-1">
@@ -24,7 +24,7 @@
             <div class=" d-flex align-items-center my-4">
             
             </div>
-            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+            <div id="logintxt" class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
               <p class="lead fw-normal mb-0 me-3">Fazer Login com </p> &nbsp
               <a href="{{route('auth.google')}}"><img id="size-img" src="img/googleIcon.png"
                 ></img>
@@ -76,7 +76,7 @@
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="submit" class="btn btn-primary"
+              <button type="submit" class="btn" id="login"
                   style="padding-left: 3rem; padding-right: 2.5rem; padding-bottom: 0.7rem;padding-top:0.7rem;">Entrar</button>
               <p class="small fw-bold mt-2 pt-1 mb-0">Não possui uma conta? <a href="{{ route('register') }}"
                       class="link-danger">Registrar</a></p>
@@ -86,7 +86,7 @@
         </div>
       </div>
     </div>
-    <div id="footer" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary ">
+    <div id="footer" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5">
       <!-- Copyright -->
       <div class="text-white mb-3 mb-md-0">
         Copyright © 2020. 
@@ -107,10 +107,30 @@
 </body>
 </html>
 
-  <style>
-#ajuste1{
- padding-right: 0px;
+<style>
+  #logintxt{
+padding-left:220px;
+margin-left:10px;
+  }
+#ajuste3{
 
+  margin-top: 50px;
+  width: 400px;
+  height: 400px;
+}
+#login{
+  background-color: #002e5e;
+  color:#fff;
+
+}
+#footer{
+  background-color: #002e5e;
+  color:#fff;
+
+}
+#ajuste1{
+ padding-right: 150px;
+ padding-top: 50px;
 
 }
 #ajuste2{
@@ -133,7 +153,7 @@ padding-top: 70px;
 h2{
 
 margin-bottom: 50px;
-margin-block-end: 50px;
+margin-block-end: 0px;
 
 }
 
@@ -154,10 +174,24 @@ margin-block-end: 50px;
   }
 }
 @media screen and (max-width: 770px) {
+
+  #ajuste3{
+width: 150px;
+height: 150px;
+}
+
+
+  #logintxt{
+padding-left:0px;
+margin-left:0px;
+  }
+
+
 #footer {
-        margin-top: 130px;
+        margin-top: 200px;
 
     }
+
 h2{
       margin-bottom: 0px;
 
@@ -174,7 +208,7 @@ h2{
 }
 #ajuste1{
  padding-right: 15px;
-
+ padding-right:0px;
 
 }
  #form3Example3
@@ -187,6 +221,9 @@ h2{
  #form3Example4 {
   padding-bottom: 0x;
 
+ }
+ h2{
+  text-align: center;
  }
 
 

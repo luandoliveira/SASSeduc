@@ -7,18 +7,18 @@
         <p class="text-center">Total de Produtos</p>
     </div>
 
-    <div class="card blue">
+    <div class="card green">
         <h2 class="text-center">5.3 millhões</h2>
         <p class="text-center">Número de Registros</p>
     </div>
 
-    <div class="card red">
+    <div class="card green">
         <h2 class="text-center">31/08/2021</h2>
         <p class="text-center">Última Atualização</p>
     </div>
 </div>
 
-<div class=" col-md-6">
+<!-- <div class=" col-md-6">
     <canvas id="myChart1"></canvas>
 </div>
 <br>
@@ -35,7 +35,7 @@
 </div>
 <div class=" col-md-3">
     <canvas id="myChart5"></canvas>
-</div>
+</div> -->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -214,17 +214,11 @@ body {
     max-height: 64px;
 }
 
-.blue {
-    border-left: 3px solid #008080;
-}
-
 .green {
-    border-left: 3px solid #008080;
+    border-left: 3px solid #002e5e;
 }
 
-.red {
-    border-left: 3px solid #008080;
-}
+
 </style>
 
 @endsection

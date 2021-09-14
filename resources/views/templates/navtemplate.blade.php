@@ -25,12 +25,53 @@
 </head>
 
 <body>
-    <!-- ------------------------------------------------------- Menu Opções ---------------------------------------------------------- -->
-    <div id="wrapper">
-        <aside id="sidebar-wrapper">
-            <div class="sidebar-brand">
-                <img id="logo" src="img/logo.png" width="100" height="100" class=" dropdown-toggle"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
+<!-- ------------------------------------------------------- Menu Opções ---------------------------------------------------------- -->
+<div id="wrapper">
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+    <img  id="logo" src="img/logo.png" width="100" height="100" class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
+    </div>
+    <div id="esconde">
+        <a ><i><img  id="logoicon" style="display:none;margin-left:11px;margin-top:12px;" src="img/logo.png" width="40" height="40"></img></i></a></div>
+     
+    <ul class="sidebar-nav">
+      <li>
+        <a style="margin-top:35px;" href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-home"></i>Home </a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-search"></i>Buscar</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-user"></i>Usuarios</a>
+      </li>
+    </ul>
+    <div style="margin-top:900px;margin-left:25px;color:#fff">Versao Beta 1.1.0</div>
+  </aside>
+
+  
+<!-- ------------------------------------------------------- nav --------------------------------------------------------------- -->
+  <div id="navbar-wrapper">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand" id="sidebar-toggle" onclick="Mudarestado('logoicon')"><i class="fa fa-bars"></i></a>
+        </div>
+              <div>
+              <div class="btn-group">
+              <img class="rounded-pill img-fluid" width="38" src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907008/medium/1501685726/enhance" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
+              <img style="display:none;" src="img/perfil.png" width="42" height="32" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>          
+               <div style="padding-top:5px;padding-left:5px;" class="text-decoration-none" data-toggle="dropdown" id="nomeuser"><h5 style="color:#fff">Moises Oliveira</h5></div>
+  <div class="dropdown-menu dropdown-menu-right">
+  <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal">
+            Perfil
+        </button>
+      <button class="dropdown-item" type="button" href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Sair</button>
+      
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                    </form>
+      <!-- <button class="dropdown-item" type="button">Algo mais aqui</button> -->
+    </div>
             </div>
             <div id="esconde">
                 <a><i><img id="logoicon" style="display:none;margin-left:11px;margin-top:12px;" src="img/logo.png"
@@ -185,6 +226,78 @@
                 </div>
             </div>
             <!-- container -->
+    </div>
+
+    </nav>
+
+  </div>
+<!-- ------------------------------------------------------- fim nav ---------------------------------------------------------- -->
+@yield('content')
+
+<!-- ---------------------------------Inicio do menu perfil --------------------------------------------------------------------- -->
+<div class="container demo">
+  <div class="modal right fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:#2e75b6">
+          <h5 class="modal-title" style="color:#fff">Perfil</h5>
+          <img  src="img/perfil.png" width="42" height="32" class=" dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#fff">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <!-- corpo do modal -->
+        <div class="modal-body">
+       
+<form class="needs-validation" novalidate>
+  <div class="form-row">
+    <div class="col-md-12 mb-6">
+      <label for="validationCustom01">Nome</label>
+      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+    </div>
+  </div>
+
+
+  <div class="form-row">
+
+    <div class="col-md-12 mb-6">
+      <label for="validationCustomUsername">Email</label>
+      <div class="input-group">
+        <!-- <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+        </div> -->
+        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+
+<div class="col-md-12 mb-6">
+  <label for="validationCustomUsername">Senha</label>
+  <div class="input-group">
+    <!-- <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroupPrepend">*</span>
+    </div> -->
+    <input type="text" class="form-control" id="validationCustomUsername" placeholder="Senha" aria-describedby="inputGroupPrepend" required>
+
+  </div>
+</div>
+<div class="col-md-12 mb-6">
+  <label for="validationCustomUsername">Confirmar Senha</label>
+  <div class="input-group">
+    <!-- <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroupPrepend">*</span>
+    </div> -->
+    <input type="text" class="form-control" id="validationCustomUsername" placeholder="Confirmar Senha" aria-describedby="inputGroupPrepend" required>
+  </div>
+</div>
+</div>
+
+</form>
+        <div class="modal-footer">
+        <button type="submit" class="btn btn-success" data-dismiss="modal">Salvar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
         </div>
         <!-- ---------------------------------fim do menu perfil --------------------------------------------------------------------- -->
 </body>

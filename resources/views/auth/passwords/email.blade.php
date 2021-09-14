@@ -60,8 +60,8 @@
    
   
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="submit" class="btn btn-primary"
-                style="padding-left: 3rem; padding-right: 2.5rem; padding-bottom: 0.7rem;padding-top:0.7rem;">Enviar redefinição de senha</button>
+              <button type="submit" class="btn btn"
+                style="padding-left: 3rem; padding-right: 2.5rem; padding-bottom: 0.7rem;padding-top:0.7rem;background-color:#002e5e;color:#fff;">Enviar redefinição de senha</button>
               <!-- <p class="small fw-bold mt-2 pt-1 mb-0">Não possui uma conta? <a href="#!"
                 
                   class="link-danger">Registrar</a>. Já possui? <a href="#!"
@@ -74,7 +74,7 @@
         </div>
       </div>
     </div>
-    <div id="footer" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary ">
+    <div id="footer" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 ">
       <!-- Copyright -->
       <div class="text-white mb-3 mb-md-0">
         Copyright © 2020. 
@@ -124,6 +124,7 @@ margin-left:10px;
 #ajuste2{
  padding-left: 0px;
  margin-left: 0px;
+ margin-top: 100px;
 
 }
 
@@ -132,6 +133,7 @@ margin-left:10px;
    height: 30px;
 
 }
+
 
 .container-fluid{
 
@@ -187,8 +189,19 @@ h2{
 .container-fluid{
 
      padding-top: 0px;
+   
 }
 
+#ajuste3{
+width: 150px;
+height: 150px;
+}
+
+#ajuste1{
+ padding-right: 15px;
+ padding-right:0px;
+
+}
 #ajuste2{
  padding-left: 15px;
  

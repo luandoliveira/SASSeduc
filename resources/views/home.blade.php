@@ -187,10 +187,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 0px;
+    margin-left: 0px;
+
 }
 
 .card {
-    border-radius: 5px;
+    border-radius: 3px;
     box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
     padding: 30px;
     margin: 20px;
@@ -215,15 +218,15 @@ body {
 }
 
 .blue {
-    border-left: 3px solid #008080;
+    border-left: 2px solid #008080;
 }
 
 .green {
-    border-left: 3px solid #008080;
+    border-left: 2px solid #008080;
 }
 
 .red {
-    border-left: 3px solid #008080;
+    border-left: 2px solid #008080;
 }
 </style>
 

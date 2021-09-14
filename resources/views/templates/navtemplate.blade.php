@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"
+        rel="stylesheet" />
     <title>Dashboard</title>
 </head>
 
@@ -20,21 +22,21 @@
             </div>
             <ul class="sidebar-nav">
                 <li class="active">
-                    <a href="#"><i class="fa fa-home"></i>Inicio</a>
+                    <a href="{{route('home')}}"><i class="fa fa-home"></i>Inicio</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-plug"></i>Cadastrar</a>
+                    <a href="{{route('profile')}}"><i class="fa fa-user"></i>Editar Perfil</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-user"></i>Dashboard</a>
-                </li>
-                <li>
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i>Sair</a>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                            class="fa fa-sign-out"></i>Sair</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
+                        @csrf
                     </form>
                 </li>
             </ul>
+
         </aside>
 
         <div id="navbar-wrapper">
@@ -306,7 +308,9 @@ a:focus {
         position: relative;
         margin-right: 250px;
     }
+    
 }
+
 </style>
 
 <script>
@@ -317,6 +321,23 @@ $button.addEventListener('click', (e) => {
     e.preventDefault();
     $wrapper.classList.toggle('toggled');
 });
+</script>
+
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
+    });
+}
 </script>
 
 </html>

@@ -24,3 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Login do Google
 Route::get('auth/google', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('auth/google/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleGoogleCallback']);
+
+//rota para editar perfil
+Route::post('/atualizar-perfil', [App\Http\Controllers\user::class, 'profileupdate'])->name('profile.update')->middleware('auth');
+Route::get('/meu-perfil', [App\Http\Controllers\user::class, 'profile'])->name('profile')->middleware('auth');

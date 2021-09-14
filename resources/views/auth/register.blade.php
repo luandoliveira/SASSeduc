@@ -10,16 +10,15 @@
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <section class="vh-100">
         <div class="container-fluid h-custom">
             <div id="centralizar2" class="row d-flex justify-content-center">
                 <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png"
-                        class="alinhar img-fluid" alt="Sample image">
+                <div id="ajuste1" class="row d-flex justify-content-center"> <!-- class="col-md-9 col-lg-6 col-xl-5" -->
+          <img  id="ajuste3" src="img/logo.png" class="img-fluid">
+        </div>
                 </div>
-
                 <div id="centralizar" class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <div>
                         <h2>Registrar </h2>
@@ -29,12 +28,15 @@
 
                         <!-- Register buttons -->
 
-                        <div class="text-center">
-                            <p>Inscreva-se com</p>
-
-                            <a href="{{route('auth.google')}}"><img id="size-img" src="img/googleIcon.png"></img>
-                            </a>
-                        </div>
+             <div id="logintxt" class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+              <p class="lead fw-normal mb-0 me-3">Fazer Login com </p> &nbsp
+              <a href="{{route('auth.google')}}"><img id="size-img" src="img/googleIcon.png"
+                ></img>
+                </a>
+  
+              
+  
+            </div>
                         <div class="divider d-flex align-items-center my-4">
                             <p class="text-center fw-bold mx-3 mb-0">Ou</p>
                         </div>
@@ -55,7 +57,7 @@
                             <div class="col">
                                 <div class="form-outline">
                                     <input type="text" id="lastName" name="lastName" class="form-control"
-                                        placeholder="Sobre nome" />
+                                        placeholder="Sobrenome" />
                                     <label class="form-label" for="form3Example2">Sobrenome</label>
                                 </div>
                             </div>
@@ -73,51 +75,39 @@
                             <label class="form-label" for="form3Example3">Email</label>
                         </div>
 
-                        <!-- Password input -->
-                        <div class="form-outline mb-4">
-                            <input type="password" id="form3Example4" class="form-control" placeholder="Senha"
+                       <div class="row mb-5">
+                            <div class="col">
+                                <div class="form-outline">
+                                <input type="password" id="form3Example4" class="form-control" placeholder="Senha"
                                 @error('password') is-invalid @enderror" name="password" />
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-                            <label class="form-label" for="form3Example4">Senha</label>
-                        </div>
-
-                        <!-- Confirm Password input -->
-                        <div class="form-outline mb-4">
-                            <input id="password-confirm" type="password" class="form-control"
+                                    <label class="form-label" for="form3Example1">Senha</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-outline">
+                                <input id="password-confirm" type="password" class="form-control"
                                 name="password_confirmation" required autocomplete="new-password"
                                 placeholder="Confirmar senha" />
-                            <label class="form-label" for="form3Example4">Confirmar Senha</label>
-                        </div>
-
-                        <!--       
-
-        <div class="text-center text-lg-start mt-4 pt-2">
-          <button type="button" class="btn btn-primary btn-lg"
-            style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-        </div> -->
-                        <div>
-                            <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary btn-block mb-4"
-                                style="padding-bottom: 0.7rem;padding-top:0.7rem;">Registrar</button>
-
-                            <div class="divider d-flex align-items-center my-4">
-
+                                    <label class="form-label" for="form3Example2">Confirmar Senha</label>
+                                </div>
                             </div>
-
-
                         </div>
-
-
+                        <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn" id="registrar"
+                  style="padding-left: 3rem; padding-right: 2.5rem; padding-bottom: 0.7rem;padding-top:0.7rem;">Registrar</button>
+               <hr>
+          </div>
                     </form>
                 </div>
             </div>
         </div>
         <div id="footer"
-            class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+            class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5">
             <!-- Copyright -->
             <div class="text-white mb-3 mb-md-0">
                 Copyright © 2020.
@@ -125,13 +115,10 @@
             <!-- Copyright -->
 
             <!-- Right -->
-
             <div>
-
                 <a href="#!" class="text-white me-4">
                     <i class="fab fa-google"></i>
                 </a>
-
             </div>
             <!-- Right -->
         </div>
@@ -141,6 +128,28 @@
 </html>
 
 <style>
+      #logintxt{
+padding-left:220px;
+margin-left:10px;
+  }
+    #registrar{
+  background-color: #002e5e;
+  color:#fff;
+  
+}
+#ajuste3{
+
+margin-top: 115px;
+width: 400px;
+height: 400px;
+
+
+}
+    #footer{
+  background-color: #00b050;
+  color:#fff;
+
+}
 #centralizar2 {
     padding-right: 0px;
 
@@ -170,12 +179,7 @@
     padding-top: 70px;
 }
 
-h2 {
 
-    margin-bottom: 50px;
-    margin-block-end: 50px;
-
-}
 
 
 /* #centralizar2{
@@ -203,9 +207,22 @@ h2 {
 
 @media screen and (max-width: 770px) {
     #footer {
-        margin-top: 350px;
+        margin-top: 170px;
 
+        
     }
+    #logintxt{
+padding-left:0px;
+margin-left:0px;
+  }
+
+    
+  #ajuste3{
+width: 150px;
+height: 150px;
+margin-top: 0px;
+
+}
 
     h2 {
         margin-bottom: 0px;
@@ -223,11 +240,12 @@ h2 {
 
     }
 
-    #ajuste1 {
-        padding-right: 15px;
+    #ajuste1{
 
+ padding-left:26%;
+ padding-right:25%;
 
-    }
+}
 
 
     #form3Example4 {
@@ -250,7 +268,9 @@ h2 {
     h2 {
 
         margin-bottom: 15px;
-
+      
+        text-align: center;
+ 
 
     }
 

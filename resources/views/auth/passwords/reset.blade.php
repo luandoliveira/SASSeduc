@@ -9,9 +9,9 @@
 <body>
 <section class="vh-100">
     <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center ">
-        <div id="ajuste1" class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
+    <div class="row d-flex justify-content-center ">
+        <div id="ajuste1" >
+        <img  id="ajuste3"  src="{{asset('img/logo.png')}}" class="img-fluid"
            >
         </div>
         <div  id="ajuste2" class="col-md-10 col-lg-6 col-xl-4 offset-xl-1">
@@ -80,8 +80,8 @@
             </div> -->
   
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="submit" class="btn btn-primary"
-                style="padding-left: 3rem; padding-right: 2.5rem; padding-bottom: 0.7rem;padding-top:0.7rem;">Confirmar</button>
+            <button type="submit" class="btn btn"
+                style="padding-left: 3rem; padding-right: 2.5rem; padding-bottom: 0.7rem;padding-top:0.7rem;background-color:#002e5e;color:#fff;">Confirmar</button>
               <p class="small fw-bold mt-2 pt-1 mb-0">Não possui uma conta? <a href="{{route('register')}}"
                 
                   class="link-danger">Registrar</a>. Já possui? <a href="{{route('login')}}"
@@ -94,7 +94,7 @@
         </div>
       </div>
     </div>
-    <div id="footer" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary ">
+    <div id="footer" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 ">
       <!-- Copyright -->
       <div class="text-white mb-3 mb-md-0">
         Copyright © 2020. 
@@ -116,6 +116,10 @@
 </html>
 
   <style>
+  #footer{
+  background-color: #00b050;
+  color:#fff;
+    }
 #ajuste1{
  padding-right: 0px;
 
@@ -124,9 +128,16 @@
 #ajuste2{
  padding-left: 0px;
  margin-left: 0px;
+ margin-top: 40px;
 
 }
-
+#ajuste3{
+margin-left: 120px;
+margin-right: 130px;
+margin-top: 50px;
+width: 400px;
+height: 400px;
+}
 #size-img{
    width: 30px;
    height: 30px;
@@ -162,10 +173,25 @@ margin-block-end: 50px;
   }
 }
 @media screen and (max-width: 770px) {
+
+  #ajuste3{
+margin-left: 0px;
+width: 150px;
+height: 150px;
+}
+
+
+  #logintxt{
+padding-left:0px;
+margin-left:0px;
+  }
+
+
 #footer {
-        margin-top: 130px;
+        margin-top: 200px;
 
     }
+
 h2{
       margin-bottom: 0px;
 
@@ -182,7 +208,7 @@ h2{
 }
 #ajuste1{
  padding-right: 15px;
-
+ padding-right:0px;
 
 }
  #form3Example3
@@ -196,8 +222,13 @@ h2{
   padding-bottom: 0x;
 
  }
+ h2{
+  text-align: center;
+ }
 
-
+#ajuste3{
+  margin-right: 0px;
+}
 
 }
   </style>

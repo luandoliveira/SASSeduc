@@ -3,7 +3,11 @@
 @section('content')
 
 <div id= cabecalho><h4>Administrativo</h4></div>
-<div class="row">
+
+
+<!-- ---------------------------CARDS ------------------------------------- -->
+
+<div class="row" id="cards" style="margin-bottom: 80px;">
     <div class="card oneCard">
         <h2 class="text-center">1.550.200</h2>
         <p class="text-center">Total de Produtos</p>
@@ -21,16 +25,24 @@
 </div>
 
 
+<!-- --------------------------Graficos Charts -------------------------------------- -->
 
-<div style="display:inline-block;" class=" col-md-6">
-    <canvas id="myChart2"></canvas>
-</div>
-
-<div class="form-group;">
-<div id="graf1" class=" col-md-3">
+<div>
+<div class="row">
+<div  class="col-md-2"></div>
+<div>
     <canvas id="myChart5"></canvas>
 </div>
+<div style="display:inline-block;" class="col-md-5">
+    <canvas id="myChart2"></canvas>
 </div>
+<div  class="col-md-2"></div>
+
+<!-- <div>
+    <canvas id="myChart3"></canvas>
+</div> -->
+</div>
+
 
 
 
@@ -173,7 +185,7 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
-
+<!-- -------------------------------------STILOS CSS --------------------------------------------------- -->
 <style>
 body {
     /* font-family: "Poppins", sans-serif; */

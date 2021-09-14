@@ -37,7 +37,7 @@
         <a href="#"><i class="fa fa-user"></i>Usuarios</a>
       </li>
     </ul>
-    
+    <div style="margin-top:900px;margin-left:25px;color:#fff">Versao Beta 1.1.0</div>
   </aside>
 
   
@@ -103,9 +103,9 @@
     <div class="col-md-12 mb-6">
       <label for="validationCustomUsername">Email</label>
       <div class="input-group">
-        <div class="input-group-prepend">
+        <!-- <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroupPrepend">@</span>
-        </div>
+        </div> -->
         <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
 
       </div>
@@ -116,9 +116,9 @@
 <div class="col-md-12 mb-6">
   <label for="validationCustomUsername">Senha</label>
   <div class="input-group">
-    <div class="input-group-prepend">
+    <!-- <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroupPrepend">*</span>
-    </div>
+    </div> -->
     <input type="text" class="form-control" id="validationCustomUsername" placeholder="Senha" aria-describedby="inputGroupPrepend" required>
 
   </div>
@@ -126,9 +126,9 @@
 <div class="col-md-12 mb-6">
   <label for="validationCustomUsername">Confirmar Senha</label>
   <div class="input-group">
-    <div class="input-group-prepend">
+    <!-- <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroupPrepend">*</span>
-    </div>
+    </div> -->
     <input type="text" class="form-control" id="validationCustomUsername" placeholder="Confirmar Senha" aria-describedby="inputGroupPrepend" required>
   </div>
 </div>

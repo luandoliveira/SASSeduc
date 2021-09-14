@@ -11,8 +11,8 @@
 <section class="vh-100">
     <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center ">
-        <div id="ajuste1" class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
+        <div id="ajuste1" >
+        <img  id="ajuste3"  src="{{asset('img/logo.png')}}" class="img-fluid"
            >
         </div>
         <div  id="ajuste2" class="col-md-10 col-lg-6 col-xl-4 offset-xl-1">
@@ -61,8 +61,8 @@
    
   
             <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="submit" class="btn btn-primary"
-                style="padding-left: 3rem; padding-right: 2.5rem; padding-bottom: 0.7rem;padding-top:0.7rem;">Enviar redefinição de senha</button>
+              <button type="submit" class="btn btn"
+                style="padding-left: 3rem; padding-right: 2.5rem; padding-bottom: 0.7rem;padding-top:0.7rem;background-color:#002e5e;color:#fff;">Enviar redefinição de senha</button>
               <!-- <p class="small fw-bold mt-2 pt-1 mb-0">Não possui uma conta? <a href="#!"
                 
                   class="link-danger">Registrar</a>. Já possui? <a href="#!"
@@ -75,7 +75,7 @@
         </div>
       </div>
     </div>
-    <div id="footer" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary ">
+    <div id="footer" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 ">
       <!-- Copyright -->
       <div class="text-white mb-3 mb-md-0">
         Copyright © 2020. 
@@ -97,6 +97,10 @@
 </html>
 
   <style>
+    #footer{
+  background-color: #00b050;
+  color:#fff;
+    }
 #ajuste1{
  padding-right: 0px;
 
@@ -105,8 +109,10 @@
 #ajuste2{
  padding-left: 0px;
  margin-left: 0px;
+ margin-top: 100px;
 
 }
+
 
 
 .container-fluid{
@@ -146,8 +152,19 @@ h2{
 .container-fluid{
 
      padding-top: 0px;
+   
 }
 
+#ajuste3{
+width: 150px;
+height: 150px;
+}
+
+#ajuste1{
+ padding-right: 15px;
+ padding-right:0px;
+
+}
 #ajuste2{
  padding-left: 15px;
  
@@ -164,9 +181,6 @@ h2{
 
   
 }
-
-
-
 
 
 }

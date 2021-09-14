@@ -8,7 +8,7 @@
 </head>
 <body>
 <section class="vh-100">
-    <div class="container-fluid h-custom">
+<div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center ">
         <div id="ajuste1" >
         <img  id="ajuste3"  src="{{asset('img/logo.png')}}" class="img-fluid"
@@ -123,6 +123,7 @@ h2{
     }
 .container-fluid{
      padding-top: 0px;
+   
 }
 #ajuste3{
 width: 150px;

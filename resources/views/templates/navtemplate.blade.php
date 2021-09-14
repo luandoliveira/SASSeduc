@@ -180,6 +180,37 @@
         <!-- ---------------------------------fim do menu perfil --------------------------------------------------------------------- -->
 </body>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
+
+<script>
+$(function() {
+    $('form[name="formEdit"]').submit(function(event) {
+        event.preventDefault();
+
+        $.ajax({
+            url: "{{route('profile.update')}}",
+            type: "post",
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function(response) {
+                console.log(response);
+
+                if (response.success === true) {
+                    //redirecionar
+                    $('#success').removeClass('d-none').html(response.message);
+                } else {
+                    $('#error').removeClass('d-none').html(response.message);
+                }
+            }
+        });
+
+
+        /* action="{{route('profile.update')}}" method="POST" */
+    });
+});
+</script>
+
 <style>
 #home {
 

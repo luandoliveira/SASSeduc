@@ -9,11 +9,10 @@
 </head>
 <body>
 <section class="vh-100">
-    <div class="container-fluid h-custom">
+<div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center ">
-        <div id="ajuste1" class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid"
-           >
+        <div id="ajuste1">
+          <img  id="ajuste3" src="{{asset('img/logo.png')}}" class="img-fluid">
         </div>
         <div  id="ajuste2" class="col-md-10 col-lg-6 col-xl-4 offset-xl-1">
             <div>
@@ -96,10 +95,30 @@
 </body>
 </html>
 
-  <style>
-#ajuste1{
- padding-right: 0px;
+<style>
+  #logintxt{
+padding-left:220px;
+margin-left:10px;
+  }
+#ajuste3{
 
+  margin-top: 50px;
+  width: 400px;
+  height: 400px;
+}
+#login{
+  background-color: #002e5e;
+  color:#fff;
+
+}
+#footer{
+  background-color: #002e5e;
+  color:#fff;
+
+}
+#ajuste1{
+ padding-right: 150px;
+ padding-top: 50px;
 
 }
 #ajuste2{
@@ -108,6 +127,11 @@
 
 }
 
+#size-img{
+   width: 30px;
+   height: 30px;
+
+}
 
 .container-fluid{
 
@@ -117,7 +141,7 @@ padding-top: 70px;
 h2{
 
 margin-bottom: 50px;
-margin-block-end: 50px;
+margin-block-end: 0px;
 
 }
 
@@ -139,6 +163,23 @@ margin-block-end: 50px;
 }
 @media screen and (max-width: 770px) {
 
+  #ajuste3{
+width: 150px;
+height: 150px;
+}
+
+
+  #logintxt{
+padding-left:0px;
+margin-left:0px;
+  }
+
+
+#footer {
+        margin-top: 200px;
+
+    }
+
 h2{
       margin-bottom: 0px;
 
@@ -155,7 +196,7 @@ h2{
 }
 #ajuste1{
  padding-right: 15px;
-
+ padding-right:0px;
 
 }
  #form3Example3
@@ -165,7 +206,13 @@ h2{
   
 }
 
+ #form3Example4 {
+  padding-bottom: 0x;
 
+ }
+ h2{
+  text-align: center;
+ }
 
 
 

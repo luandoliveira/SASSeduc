@@ -1,15 +1,19 @@
 @extends('templates.navtemplate')
 @section('content')
-<div id= cabecalho><h4>Administrativo</h4></div>
+
+<body>
+
+@if ($showUser || $showProjeto || $showProcesso || $showCronograma)
+
 <!-- ---------------------------CARDS ------------------------------------- -->
 <div class="row" id="cards" style="margin-bottom: 80px;">
     <div class="card oneCard">
-        <h2 class="text-center">1.550.200</h2>
-        <p class="text-center">Total de Produtos</p>
+        <h2 class="text-center">20</h2>
+        <p class="text-center">Total de Projetos</p>
     </div>
     <div class="card twoCard">
-        <h2 class="text-center">5.3 millhões</h2>
-        <p class="text-center">Número de Registros</p>
+        <h2 class="text-center">20</h2>
+        <p class="text-center">Número de Processos</p>
     </div>
     <div class="card threeCard">
         <h2 class="text-center">31/08/2021</h2>
@@ -23,6 +27,7 @@
 <div>
     <canvas id="myChart5"></canvas>
 </div>
+<div class="col-md"></div>
 <div style="display:inline-block;" class="col-md-5">
     <canvas id="myChart2"></canvas>
 </div>
@@ -31,6 +36,101 @@
     <canvas id="myChart3"></canvas>
 </div> -->
 </div>
+@else
+<!-- ---------------------------CARDS ------------------------------------- -->
+<main>
+  <div class="lp">
+    <nav class="lp__nav">
+      <p class="lp__nav__text">BEM - VINDO! </p>
+    </nav>
+    <section class="lp__body">
+    <!--- START: TEXT --->
+    <div class="lp__text">
+      <h1 class="lp__text__title"><span class="lp__text__title-first">Olá,</span>
+      {{auth()->user()->name}}.</h1>
+      <p class="lp__text__subtext">Seu perfil ainda não possui permissões dentro do sistema. Por favor, contate o administrador.</p>
+    </div>
+    <!--- END: TEXT --->
+    <!--- START: IMG --->
+    <div class="lp__mainImg">
+      <img src="{{asset('img/home.png')}}" class="product__item__image">
+    </div>
+    <!--- END: IMG --->
+    </section>
+  </div>
+</main>
+<style>
+    * {
+  font-family: sans-serif;
+}
+body {
+  /*background: #FAFAFA;*/
+  background: #ECF4FA;
+  /* height: 100vh; */
+  /* padding: 0px 30px; */
+  margin: 0;
+  /* display: flex; */
+  /* flex-direction: column; */
+  justify-content: center;
+}
+.lp {
+  background: #fff;
+  box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.4);
+  border-radius: 8px;
+  max-width: 680px;
+  height: 400px;
+  margin: auto;
+  padding: 32px 32px 8px 32px;
+  overflow: hidden;
+  margin-top:200px;
+}
+.lp__body {
+  display: flex;
+}
+/*NAV*/
+.lp__nav {
+  width: max-content;
+  display: flex;
+  align-items: center;
+}
+.lp__nav__logo {
+  width: 20px;
+  margin: -1px 0 0;
+  padding: 0 4px 0 0;
+}
+.lp__nav__text {
+  font-weight: 600;
+  font-size: 18px;
+}
+/*MAIN TEXT*/
+.lp__text {
+  min-width: 200px;
+  padding: 0 0 25px;
+  align-self: flex-end;
+}
+.lp__text__title {
+  font-size: 32px;
+  /* text-decoration: underline; */
+  margin: 0;
+}
+.lp__text__title-first {
+  display: block;
+}
+.lp__text__subtext {
+  font-size: 20px;
+  line-height: 1.75;
+  margin: 16px 0;
+}
+/*MAIN IMAGE*/
+.product__item__image{
+width: 148px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+</style>
+@endif
+</body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 var ctx = document.getElementById("myChart1");

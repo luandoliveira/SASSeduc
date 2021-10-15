@@ -10,9 +10,8 @@
 <section class="vh-100">
 <div class="container-fluid h-custom">
       <div class="row d-flex justify-content-center ">
-        <div id="ajuste1" >
-        <img  id="ajuste3"  src="{{asset('img/logo.png')}}" class="img-fluid"
-           >
+      <div id="ajuste1"> <!-- class="col-md-9 col-lg-6 col-xl-5" -->
+          <img  id="ajuste3" src="/img/logo.png" class="img-fluid">
         </div>
         <div  id="ajuste2" class="col-md-10 col-lg-6 col-xl-4 offset-xl-1">
             <div>
@@ -65,17 +64,18 @@
         </div>
       </div>
     </div>
-    <div id="footer" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 ">
+    <div id="footer" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-2  px-xl-5">
       <!-- Copyright -->
       <div class="text-white mb-3 mb-md-0">
-        Copyright © 2020. 
+      <img width="85px;"  src="{{asset('img/seduc.png')}}" class="img-fluid">
       </div>
       <!-- Copyright -->
+      <div style="padding-top:10px;padding-bottom:10px;">  Copyright © 2021.
+  <a >Seduc-AM. Todos os Direitos Reservados</a> </div>
+    
       <!-- Right -->
       <div>
-        <a href="#!" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
+        <img width="130px;"  src="{{asset('img/governo.png')}}" class="img-fluid">
       </div>
       <!-- Right -->
     </div>
@@ -83,10 +83,12 @@
 </body>
 </html>
   <style>
-    #footer{
-  background-color: #00B050;
+#footer{
+  background-color: #002e5e;
   color:#fff;
-    }
+  margin-top: 11px;
+
+}
 #ajuste1{
  padding-right: 0px;
 }
@@ -94,6 +96,12 @@
  padding-left: 0px;
  margin-left: 0px;
  margin-top: 100px;
+}
+#ajuste3{
+margin-right: 50px;
+margin-top: 50px;
+width: 400px;
+height: 400px;
 }
 .container-fluid{
 padding-top: 70px;
@@ -119,17 +127,22 @@ margin-block-end: 50px;
 }
 @media screen and (max-width: 770px) {
 h2{
+  text-align: center;
       margin-bottom: 0px;
     }
 .container-fluid{
      padding-top: 0px;
    
 }
+
+
 #ajuste3{
 width: 150px;
 height: 150px;
+margin-right: 0px;
 }
 #ajuste1{
+
  padding-right: 15px;
  padding-right:0px;
 }

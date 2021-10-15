@@ -97,21 +97,21 @@
                 </div>
             </div>
         </div>
-        <div id="footer"
-            class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5">
-            <!-- Copyright -->
-            <div class="text-white mb-3 mb-md-0">
-                Copyright © 2020.
-            </div>
-            <!-- Copyright -->
-            <!-- Right -->
-            <div>
-                <a href="#!" class="text-white me-4">
-                    <i class="fab fa-google"></i>
-                </a>
-            </div>
-            <!-- Right -->
-        </div>
+        <div id="footer" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-2  px-xl-5">
+      <!-- Copyright -->
+      <div class="text-white mb-3 mb-md-0">
+      <img width="85px;"  src="img/seduc.png" class="img-fluid">
+      </div>
+      <!-- Copyright -->
+      <div style="padding-top:10px;padding-bottom:10px;">  Copyright © 2021.
+  <a >Seduc-AM. Todos os Direitos Reservados</a> </div>
+    
+      <!-- Right -->
+      <div>
+        <img width="130px;"  src="img/governo.png" class="img-fluid">
+      </div>
+      <!-- Right -->
+    </div>
     </section>
 </body>
 </html>
@@ -129,9 +129,11 @@ margin-top: 115px;
 width: 400px;
 height: 400px;
 }
-    #footer{
-  background-color: #00B050;
+#footer{
+  background-color: #002e5e;
   color:#fff;
+  margin-top: 11px;
+
 }
 #centralizar2 {
     padding-right: 0px;

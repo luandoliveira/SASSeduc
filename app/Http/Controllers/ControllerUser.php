@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class user extends Controller
+class ControllerUser extends Controller
 {
-    //
+
 
     public function profile(Request $request) 
     {
@@ -15,6 +15,7 @@ class user extends Controller
 
     public function profileupdate(Request $request) 
     {
+
         $data = $request->all();
 
         if ($data['password'] != null)  //verificando se o campo senha não esta vazio
@@ -37,5 +38,6 @@ class user extends Controller
             echo json_encode($edit);
             return;
         }
-    }       
+    }  
+             
 }

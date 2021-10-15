@@ -30,6 +30,8 @@ class User extends Authenticatable
         'email',
         'password',
         'provider_id',
+        'avatar',
+        'id',
     ];
 
     /**
@@ -51,5 +53,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function roles(){
+        return $this->hasMany('Role');
+    }
+
+    public function relProjetos(){
+        return $this->hasMany('App\Models\Projeto', 'id_user');
+    }
 
 }

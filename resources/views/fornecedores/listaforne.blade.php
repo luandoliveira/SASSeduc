@@ -2,30 +2,34 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
+    <!-- Teste de Senha e Requisição Ajax -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.2/js/dataTables.bootstrap5.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap5.min.css">
+
+    <!-- necessario para o modal perfil pegar -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-
 
 
     <title>SAES Seduc</title>
-
-
 </head>
 
 <body>
-    <!--------------------------------------------------------------------------- Menu Opções ---------------------------------------------------------------------------------->
+    <!-- ------------------------------------------------------- Menu Opções ---------------------------------------------------------- -->
     <div id="wrapper">
         <aside id="sidebar-wrapper">
             <div class="sidebar-brand">
@@ -33,12 +37,10 @@
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
                 <hr style="height:1px;border:none;color:#333;background-color:#fff;">
             </div>
-
             <div id="esconde">
                 <a><i><img id="logoicon" style="display:none;margin-left:11px;margin-top:35px;"
                             src="{{asset('img/logonav.png')}}" width="40" height="40"></img></i></a>
             </div>
-
             <ul class="sidebar-nav">
                 <li>
                     <a style="margin-top:80px;" href="{{url('home')}}"><i class="fa fa-home"></i>Página Inicial</a>
@@ -94,45 +96,33 @@
                     </ul>
                 </li>
                 @endif
-
                 <!-- <ul style="margin-top:590px;margin-left:25px;color:#fff">Versao 1.9</ul> -->
                 </li>
             </ul>
 
 
-
         </aside>
 
 
-        <!------------------------------------------------------------------ nav -------------------------------------------------------------------------->
-
-
+        <!-- ------------------------------------------------------- nav --------------------------------------------------------------- -->
         <div id="navbar-wrapper">
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="navbar-header">
-
                         <a href="#" class="navbar-brand" id="sidebar-toggle" onclick="Mudarestado('logoicon')"><i
                                 class="fa fa-bars"></i></a>
-
                     </div>
                     <div>
-                        <a href="#" id="show1"><i class="fa fa-bell-o" aria-hidden="true"
-                                style="padding-right:15px;font-size:30px;"></i></a>
-
                         <div class="btn-group">
-
                             @if (auth()->user()->avatar != null)
                             <img class="rounded-pill img-fluid" width="38" src="{{auth()->user()->avatar}}"
                                 class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false"></img>
                             @else
-                            <img src="{{asset('img/usuario.png')}}" width="32" height="32" class="dropdown-toggle"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                style="margin-bottom:8px;"></img>
-
+                            <img src="{{asset('img/usuario.png')}}" width="35" height="32" class="dropdown-toggle"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></img>
                             @endif
-                            <div style="padding-top:5px;padding-left:5px;" class="text-decoration-none"
+                            <div style="padding-top:2px;padding-left:5px;" class="text-decoration-none"
                                 data-toggle="dropdown" id="nomeuser">
                                 <h5 style="color:#fff">{{auth()->user()->name}}</h5>
                             </div>
@@ -156,10 +146,62 @@
             </nav>
 
         </div>
-        <!------------------------------------------------------------------ fim nav --------------------------------------------------------------------->
-        @yield('content')
+        <!-- ------------------------------------------------------- fim nav ---------------------------------------------------------- -->
+        <div id=cabecalho>
+            <h4>Administrativo</h4>
+        </div>
+        <br>
+        <div id="lista">
+            <div class="row">
+                <!-- <table id="example" class="table table-striped" style="width:100%;background-color:#fff;"> -->
+                <div class="card">
+                    <div class="card-header">
+                        Lista de Projetos
+                    </div>
+                    <div class="table-responsive-xl  table-sm">
+                        <table id="example" class="table table-striped table-bordered"
+                            style="width:100%;background-color:#fff;">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>CNPJ</th>
+                                    <th>Responsável</th>
+                                    <th>E-mail</th>
+                                    <th>Telefone</th>
+                                    <th>Modalidade</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
 
-        <!--------------------------------------Inicio do menu perfil ----------------------------------------------------------------------------------->
+                                @foreach ($fornecedores as $fornecedor)
+                                <tr>
+                                    <td>{{$fornecedor->nome}}</td>
+                                    <td>{{$fornecedor->cpf_cnpj}}</td>
+                                    <td>{{$fornecedor->responsavel}}</td>
+                                    <td>{{$fornecedor->email}}</td>
+                                    <td>{{$fornecedor->telefone}}</td>
+                                    <td>{{$fornecedor->tipo_empresa}}</td>
+
+                                    @endforeach
+                                </tr>
+
+                            </tbody>
+                            <!-- <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot> -->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ---------------------------------Inicio do menu perfil --------------------------------------------------------------------- -->
         <div class="container demo">
             <div class="modal right fade" id="exampleModal" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -255,7 +297,7 @@
             <!-- container -->
 
         </div>
-        <!-------------------------------------------------------------------------fim do menu perfil ----------------------------------------------------------------------------------->
+        <!-- ---------------------------------fim do menu perfil --------------------------------------------------------------------- -->
 
 
 
@@ -270,11 +312,55 @@
 
 
 </body>
+<script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" language="javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" language="javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" language="javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
+<script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.print.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
 
+            {
+                extend: 'print',
+                /* botão de imprimir da Tabela */
+                text: '<a><i class="fa fa-print"></i> <br>Imprimir</a>',
+                className: 'btn btn-default',
+            },
+            {
+                extend: 'excel',
+                /* botão de imprimir da Tabela */
+                text: '<a><i class="fa fa-table"></i> <br>Excel</a>',
+                className: 'btn btn-default',
+            },
+            {
+                extend: 'pdf',
+                /* botão de imprimir da Tabela */
+                text: '<a><i class="fa fa-file-pdf-o"></i> <br>PDF</a>',
+                className: 'btn btn-default',
+            },
+
+        ],
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+        },
+
+    });
+    table.buttons()
+        .container().appendTo($('.col-sm-6:eq(0)', table.table().container()));
+});
+</script>
 <!-- Scripts do ajax -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
-<!-- Teste de Senha e Requisição Ajax -->
+
 <script>
 $(function() {
     $('form[name="formEdit"]').submit(function(event) {
@@ -324,6 +410,7 @@ $(function() {
     });
 });
 </script>
+
 <!-- Script para trocar o icon + para - ao clicar -->
 <script>
   $('a').click(function() {
@@ -333,22 +420,42 @@ $(function() {
 </script>
 
 <style>
+.example_filter {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    align-items: center;
+}
 
-.card {
-    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.2);
+.dt-buttons {
+
+    width: 170px;
+    padding-top: 50px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    align-items: center;
+}
+
+.trans {
+    transition: all 0.5s ease;
+}
+
+#lista {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 #contfooter {
     color: #2e75b6;
-
-    background-color: #dfecf7;
+    background-color: #DFECF7;
 }
 
-
 #home {
-
     margin-top: 60px;
-
 }
 
 .dropdown-container {
@@ -356,13 +463,11 @@ $(function() {
     padding-left: 60px;
 }
 
-
 body {
     padding-bottom: 0px;
     position: relative;
     min-height: 100%;
 }
-
 
 a {
     transition: background 0.2s, color 0.2s;
@@ -373,13 +478,9 @@ a:focus {
     text-decoration: none;
 }
 
-.trans {
-    transition: all 0.5s ease;
-}
-
 #wrapper {
     padding-left: 0;
-    /* transition: all 0.1s ease;  */
+    /* transition: all 0.5s ease; */
     position: relative;
 }
 
@@ -392,9 +493,9 @@ a:focus {
     margin-left: -250px;
     overflow-y: auto;
     overflow-x: hidden;
-    background: linear-gradient(#2e75b6, #1a4e7d);
+    background: linear-gradient(#2E75B6, #1A4E7D);
     /* body do menu  */
-    /* transition: all 0.1s ease; */
+    /* transition: all 0.5s ease; */
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -407,7 +508,6 @@ a:focus {
     width: 250px;
     text-align: center;
     padding-top: 6px;
-
 }
 
 .sidebar-brand h2 {
@@ -465,7 +565,7 @@ a:focus {
 
 #navbar-wrapper .navbar {
     border-width: 0 0 0 0;
-    background: linear-gradient(to right, #2e75b6, #4ba8ef);
+    background: linear-gradient(to right, #2E75B6, #4BA8EF);
     /*cor do cabeçalho*/
     font-size: 24px;
     margin-bottom: 0;
@@ -494,7 +594,6 @@ a:focus {
 }
 
 @media (min-width: 992px) {
-
     #wrapper {
         padding-left: 250px;
     }
@@ -539,12 +638,18 @@ a:focus {
         position: relative;
         margin-right: 60px;
     }
+}
 
-
+#cabecalho {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: linear-gradient(to right, #00b050, #00b050c7);
+    color: #fff;
+    padding-left: 45%;
+    padding-right: 50%;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-
     .trans {
         transition: all 0.0s ease;
     }
@@ -585,10 +690,17 @@ a:focus {
         position: relative;
         margin-right: 250px;
     }
-
 }
 
 @media (max-width: 767px) {
+    #cabecalho {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background: linear-gradient(to right, #00b050, #2bbd6d);
+        color: #fff;
+        padding-left: 30%;
+    }
+
     #sidebar-wrapper {
         z-index: 1000;
         position: fixed;
@@ -598,31 +710,23 @@ a:focus {
         margin-left: -250px;
         overflow-y: auto;
         overflow-x: hidden;
-        background: linear-gradient(#2e75b6, #1a4e7d);
+        background: linear-gradient(#2E75B6, #1A4E7D);
         /* body do menu  */
         /* transition: all 0.5s ease; */
     }
 
-    .trans {
-        transition: all 0.0s ease;
-    }
-
     #nomeuser {
-
         display: none;
     }
 
     .container-fluid {
-
         padding-left: 0px;
         padding-right: 0px;
     }
 
     #esconde {
-
         display: none !important;
     }
-
 
     #wrapper {
         padding-left: 0;
@@ -679,7 +783,6 @@ a:focus {
     transform: translate3d(0%, 0, 0);
 }
 
-
 .modal.right .modal-content {
     height: 100%;
     overflow-y: auto;
@@ -692,10 +795,10 @@ a:focus {
 /* fecha o modal */
 .modal.right.fade .modal-dialog {
     right: -320px;
-    /* -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
     -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
-    -o-transition: opacity 0.3s linear, right 0.3s ease-out; */
-    /* transition: opacity 0.3s linear, right 0.3s ease-out; */
+    -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+    transition: opacity 0.3s linear, right 0.3s ease-out;
 }
 
 /* abre o modal */
@@ -713,13 +816,11 @@ a:focus {
 }
 
 .modal-header {
-    border-bottom-color: #eeeeee;
-    background-color: #fafafa;
+    border-bottom-color: #EEEEEE;
+    background-color: #FAFAFA;
 }
 
 /* ----- v CAN BE DELETED v ----- */
-
-
 .demo {
     padding-top: 60px;
     padding-bottom: 110px;
@@ -730,7 +831,7 @@ a:focus {
     padding: 10px 15px;
     border-radius: 0;
     font-size: 16px;
-    background-color: #ffffff;
+    background-color: #FFFFFF;
 }
 
 .btn-demo:focus {
@@ -740,7 +841,6 @@ a:focus {
 .modal-backdrop {
     background-color: #fff;
 }
-
 
 .modal-backdrop.show {
     opacity: .6;
@@ -766,7 +866,7 @@ function Mudarestado(el) {
     console.log(display);
     if (display == "none") {
         document.getElementById(el).style.display = 'block';
-        // document.querySelector('#logo').style.display = 'block';
+
     } else {
         document.getElementById(el).style.display = 'none';
 
@@ -816,25 +916,6 @@ for (i = 0; i < dropdown.length; i++) {
 }
 </script>
 <script>
-$(function() {
-    $('.toast').toast({
-        animation: true,
-        autohide: true,
-        delay: 10000
-    });
-
-    $("#show1").on("click", function() {
-        $(".toast").toast("show");
-    });
-
-    $("#hide1").on("click", function() {
-        $(".toast").toast("hide");
-    });
-});
-</script>
-
-<!-- funcao de transicao do menu -->
-<script>
 let menu = document.querySelector('#sidebar-wrapper')
 let menuButton = document.querySelector('#sidebar-toggle')
 console.log(menuButton);
@@ -851,6 +932,13 @@ menuButton.addEventListener('click', function() {
         // console.log('entrei2')
     }
 })
+</script>
+
+<script>
+$(document).ready(function() {
+    $('dataTables_wrapper').removeClass()
+    // $(element).addClass('')
+});
 </script>
 
 </html>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Models\User;
+use App\Models\Escola;
 
 class ControllerAdmin extends Controller
 {
@@ -85,7 +86,8 @@ class ControllerAdmin extends Controller
         $showProcesso = Gate::allows('edit-processo'); //Verificando permissão PROCESSO
         $showCronograma = Gate::allows('edit-cronograma'); //Verificando permissão CRONOGRAMA
         $projetos= $this->objUser->find($id);
-        return view('admin.edit', compact('users', 'showUser', 'showProjeto', 'showProcesso', 'showCronograma'));
+        $escolas = Escola::all();
+        return view('admin.edit', compact('users', 'showUser', 'showProjeto', 'showProcesso', 'showCronograma', 'escolas'));
     }
 
     /**
@@ -101,6 +103,10 @@ class ControllerAdmin extends Controller
           User::where(['id'=>$id])->update([
                 'name' => $request->name,
                 'password' => bcrypt($request->password),
+                'telefone' => $request->telefone,
+                'matricula' => $request->matricula,
+                'cpf' => $request->cpf,
+                'lotacao' => $request->lotacao
                             
 
           ]);

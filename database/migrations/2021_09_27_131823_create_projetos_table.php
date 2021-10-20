@@ -42,7 +42,6 @@ class CreateProjetosTable extends Migration
             $table->date('data_fim');
             $table->string('categoria');
             $table->string('recursos_necessarios');
-
             $table->timestamps();
         });
     }

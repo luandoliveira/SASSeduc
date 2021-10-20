@@ -48,22 +48,26 @@
                                 </div>
                                 <div class="form-group col-12 col-md-6">
                                     <label for="inputAddress">Matrícula</label>
-                                    <input type="text" class="form-control" id="inputAddress" placeholder="Matrícula">
+                                    <input type="text" class="form-control" id="inputAddress" name="matricula" placeholder="Matrícula"  value="{{$users->matricula ?? ''}}">
                                 </div>
                                 <div class="form-group col-12 col-md-6">
                                     <label for="inputAddress2">CPF</label>
                                     <input type="text" class="form-control" id="inputAddress2"
-                                        placeholder="000.000.000-00">
+                                    name="cpf" placeholder="000.000.000-00"  value="{{$users->cpf ?? ''}}">
                                 </div>
                                 <div class="form-group col-12 col-md-6">
                                     <label for="inputCity">Lotação</label>
-                                    <input type="text" class="form-control" id="inputCity"
-                                        placeholder="Escola Estadual...">
+                                    <select type="text" class="form-control" id="escola" name="lotacao" placeholder="Escola">
+                                    <option selected > {{$users->lotacao ?? 'Escolha'}}</option>
+                                    @foreach ($escolas as $escola)
+                                    <option value="{{$escola->escola}}">{{$escola->escola}}</option>
+                                    @endforeach
+                                </select>
                                 </div>
                                 <div class="form-group col-12 col-md-6">
                                     <label for="inputZip">Fone</label>
                                     <input type="text" class=" form-control" id="inputZip"
-                                        placeholder="(92) 99999-9999">
+                                        placeholder="(92) 99999-9999" name="telefone"  value="{{$users->telefone ?? ''}}">
                                 </div>
                                 <div id="botoes" class="form-group col-12 ">
                                     <button href="{{url('admin/usuarios')}}" type="submit" class="btn btn-danger">Voltar</button>

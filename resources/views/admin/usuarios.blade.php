@@ -175,11 +175,11 @@
                                 <tr>
                                     <td>{{$usuarios->id}}</td>
                                     <td>{{$usuarios->name}}</td>
-                                    <td>12121212</td>
-                                    <td>000.000.000-00</td>
+                                    <td>{{$usuarios->matricula}}</td>
+                                    <td>{{$usuarios->cpf}}</td>
                                     <td>{{$usuarios->email}}</td>
-                                    <td>9999-9999</td>
-                                    <td>Escola Exemplo</td>
+                                    <td>{{$usuarios->telefone}}</td>
+                                    <td>{{$usuarios->lotacao}}</td>
                                     <td>
                                         <a style="padding-left:10px;"
                                             href="{{url("admin/usuarios/$usuarios->id/edit")}}">
